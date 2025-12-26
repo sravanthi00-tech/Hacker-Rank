@@ -1,0 +1,14 @@
+Query the total population of all cities in CITY where District is California.
+
+Input Format
+
+The CITY table is described as follows:
+Field                                    type
+ID                                        int
+Name                                      varchar(12)
+countrycode                               varchar(10)
+District                                  varchar(20)
+population                                int
+
+// SQL CODE
+SELECT CITY(POPULATION) FROM CITY WHERE DISTRICT = 'California';
