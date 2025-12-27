@@ -1,0 +1,16 @@
+Query the difference between the maximum and minimum populations in CITY.
+
+Input Format
+
+The CITY table is described as follows: 
+
+Field                                 Type
+Id                                    Int
+Name                                  Varchar(20)
+CountryCode                           Varchar(20)
+District                              Varchar(20)
+Population                            Int
+
+// SQL code:
+
+SELECT MAX(POPULATION) - MIN(POPULATION) FROM CITY;
