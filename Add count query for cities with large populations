@@ -1,0 +1,17 @@
+Query a count of the number of cities in CITY having a Population larger than 100000.
+
+Input Format
+
+The CITY table is described as follows: 
+
+FIELD                                                   TYPE
+ID                                                      INT
+NAME                                                    VARCHAR(10)
+COUNTRYCODE                                             VARCHAR(10)
+DISTRICT                                                VARCHAR(10)
+POPULATION                                              INT
+
+
+// SQL CODE:
+
+SELECT COUNT(*) FROM CITY WHERE POPULATION > 100000;
