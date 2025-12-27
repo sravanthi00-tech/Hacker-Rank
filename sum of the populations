@@ -1,0 +1,16 @@
+Query the sum of the populations for all Japanese cities in CITY. The COUNTRYCODE for Japan is JPN.
+
+Input Format
+
+The CITY table is described as follows:
+
+FIELD                                        TYPE
+ID                                          INT
+NAME                                        VARCHAR(20)
+COUNTRYCODE                                 VARCHAR(20)
+DISTRICT                                    VARCHAR(20)
+POPULATION                                  INT
+
+//SQL CODE
+
+SELECT SUM(POPULATION) FROM CITY WHERE COUNTRYCODE = 'JPN';
