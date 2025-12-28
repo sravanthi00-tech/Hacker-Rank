@@ -1,0 +1,18 @@
+Given five positive integers.find min and max sum of an array.
+
+sample Input:
+arr = [2,1,4,3,5]
+
+Sample output:
+10  14
+
+//python code:
+
+def min_max(arr):
+    total = sum(arr)
+    max_sum = max(arr)
+    min_sum = min(arr)
+    print(total - max_sum,total - min_sum)
+
+arr = [2,1,4,3,5]
+min_max(arr)
