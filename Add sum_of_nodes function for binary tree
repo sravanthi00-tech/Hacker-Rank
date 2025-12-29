@@ -1,0 +1,13 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def sum_of_nodes(root):
+    if root is None:
+        return 0
+    return root.data + sum_of_nodes(root.left) + sum_of_nodes(root.right)
+
+arr = [3,4,5,2,1,40]
+print(sum(arr))
