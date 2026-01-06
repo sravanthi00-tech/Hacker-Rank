@@ -1,0 +1,44 @@
+left view of binary tree::
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def insert(root, data):
+    if root is None:
+        return Node(data)
+    if data < root.data:
+        root.left = insert(root.left, data)
+    elif data > root.data:
+        root.right = insert(root.right, data)
+    return root
+
+def left_view(node, level, maxlevel):
+    if node is None:
+        return
+
+    if level > maxlevel[0]:
+        print(node.data, end=" ")
+        maxlevel[0] = level
+
+    left_view(node.left, level + 1, maxlevel)
+    left_view(node.right, level + 1, maxlevel)
+
+def left_view_tree(root):
+    maxlevel = [0]
+    left_view(root, 1, maxlevel)
+    print()
+
+# ---- INPUT ----
+T = int(input())
+for _ in range(T):
+    N = int(input())
+    arr = list(map(int, input().split()))
+
+    root = None
+    for x in arr:
+        root = insert(root, x)
+
+    left_view_tree(root)
