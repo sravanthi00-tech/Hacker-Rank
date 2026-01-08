@@ -1,0 +1,42 @@
+//Add binary tree insertion and left view functions
+
+input:
+arr = [10,5,9,23,18,-1,3]
+output:
+10 5 -1 3 
+
+//code:
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+def insert(root,data):
+    if root is None:
+        return Node(data)
+    if data < root.data:
+        root.left = insert(root.left,data)
+    if data > root.data:
+        root.right = insert(root.right,data)
+    return root
+def left_view(root):
+    if root is None:
+        return 
+    queue = [root]
+    while queue:
+        level_size = len(queue)
+        i = 0
+        while i < level_size:
+            Node = queue.pop(0)
+            if i == 0:
+                print(Node.data,end = " ")
+            if Node.left:
+                queue.append(Node.left)
+            if Node.right:
+                queue.append(Node.right)      
+            i += 1
+root = None
+arr = [10,5,9,23,18,-1,3]
+for x in arr:
+    root = insert(root,x)
+left_view(root)
